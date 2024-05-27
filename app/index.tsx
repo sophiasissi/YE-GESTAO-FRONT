@@ -10,7 +10,7 @@ export default function Index() {
         <Text>Go to login</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => router.navigate("register")}>
-        <Text>Go to registerx</Text>
+        <Text>Go to registerxdddddd</Text>
       </TouchableOpacity>
     </View>
   );
