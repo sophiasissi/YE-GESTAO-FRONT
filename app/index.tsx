@@ -1,17 +1,25 @@
 import { useRouter } from "expo-router";
-import { View, Text, TouchableOpacity } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Button, ButtonText, Container, Input, Logo, SecondContainer, SecondText, Txt } from "./styles";
+import Logon from "../assets/images/logo_principal.png";
 
 export default function Index() {
   const router = useRouter();
   return (
-    <View>
-      <Text>Hello, world!</Text>
-      <TouchableOpacity onPress={() => router.navigate("login")}>
-        <Text>Go to login</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => router.navigate("register")}>
-        <Text>Go to register</Text>
-      </TouchableOpacity>
-    </View>
+    <Container>
+      <Logo source={Logon} />
+      <Txt>Bem vindo ao seu app de Gestão de Saúde!</Txt>
+      <Input placeholder={`Insira seu email`} />
+      <Input placeholder={`Insira sua senha`} />
+      <Button onPress={() => router.navigate("home")}>
+        <ButtonText>Entrar</ButtonText>
+      </Button>
+      <SecondContainer>
+        <Text style={{color: '#fff'}}>Ainda não tem cadstro? </Text>
+        <TouchableOpacity onPress={() => router.navigate("register")}>
+          <SecondText>Faça seu cadastro!</SecondText>
+        </TouchableOpacity>
+      </SecondContainer>
+    </Container>
   );
 }
