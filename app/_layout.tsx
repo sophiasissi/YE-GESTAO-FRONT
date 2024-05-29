@@ -26,6 +26,10 @@ export default function RootLayout() {
         title: "",
         headerShown: false
       }} />
+      <Stack.Screen name="exams/index" options={{
+        title: "",
+        headerShown: false
+      }} />
     </Stack>
   );
 }
