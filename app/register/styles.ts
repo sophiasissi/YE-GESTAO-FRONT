@@ -1,29 +1,53 @@
-import { Button } from "react-native";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
+  display: flex;
   flex: 1;
   justify-content: center;
-  padding: 16px;
-  background-color: #fff;
-`;
+  align-items: center;
+  background-color: #739489;
+`
 
 export const Logo = styled.Image`
-  width: 100px;
-  height: 100px;
-  align-self: center;
-  margin-bottom: 32px;
+  width: 80%;
+  height: 25%;
+  bottom: 5%;
 `;
 
 export const StyledTextInput = styled.TextInput`
+  width: 90%;
   height: 40px;
-  border-color: #ccc;
-  border-width: 1px;
-  margin-bottom: 12px;
-  padding-horizontal: 8px;
+  border: 1px solid #fff;
   border-radius: 4px;
+  padding: 0 8px;
+  margin: 10px;
+  color: #fff;
 `;
 
-export const StyledButton = styled(Button)`
-  margin-bottom: 12px;
-`;
+export const Button = styled.TouchableOpacity`
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    width: 80%;
+    align-self: center;
+    margin-top: 25px;
+`
+
+export const ButtonText = styled.Text`
+  color: #003430;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+`
+
+export const SecondContainer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+`
+
+export const SecondText = styled.Text`
+  color: #fff;
+  font-weight: bold;
+`

@@ -24,7 +24,6 @@ export const Input = styled.TextInput`
   padding: 0 8px;
   margin: 10px;
   color: #fff;
-  
 `
 
 export const Logo = styled.Image`

@@ -17,7 +17,7 @@ export default function RootLayout() {
         title: "Home",
         headerShown: false
       }} />
-      <Stack.Screen name="login/index" options={{
+      <Stack.Screen name="home/index" options={{
         title: "",
         headerBackVisible: false
       }} />

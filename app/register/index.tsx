@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { router } from 'expo-router';
-import { Container  } from '../styles';
-import { Logo, StyledButton, StyledTextInput } from './styles';
+import { Button, ButtonText, Container, Logo, SecondContainer, SecondText, StyledTextInput } from '../register/styles';
+import { Text, TouchableOpacity } from "react-native";
 import Logon from '../../assets/images/logo_principal.png'
 
 export default function Register() {
@@ -42,8 +42,15 @@ export default function Register() {
           secureTextEntry={field.secureTextEntry}
         />
       ))}
-      <StyledButton title="Cadastrar" onPress={handleSignup} />
-      <StyledButton title="Já tem uma conta? Faça login" onPress={() => router.navigate('Login')} />
+      <Button onPress={() => router.navigate("home")}>
+        <ButtonText>Cadastrar</ButtonText>
+      </Button>
+      <SecondContainer>
+        <Text style={{color: '#fff'}}>Ainda não tem cadastro? </Text>
+        <TouchableOpacity onPress={() => router.navigate("register")}>
+          <SecondText>Faça seu cadastro!</SecondText>
+        </TouchableOpacity>
+      </SecondContainer>
     </Container>
   );
 };
