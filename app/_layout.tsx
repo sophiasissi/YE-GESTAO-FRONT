@@ -19,11 +19,14 @@ export default function RootLayout() {
       }} />
       <Stack.Screen name="home/index" options={{
         title: "",
-        headerBackVisible: false,
-        headerShown: false
+        headerBackVisible: false
       }} />
       <Stack.Screen name="register/index" options={{
         title: "",
+        headerShown: false
+      }} />
+      <Stack.Screen name="exams/index" options={{
+        title: "Home",
         headerShown: false
       }} />
     </Stack>
