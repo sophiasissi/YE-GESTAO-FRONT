@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
 import { Image, Text, TouchableOpacity, View } from "react-native";
-import { Button, ButtonText, Container, Input, Logo, SecondContainer, SecondText, Txt } from "./styles";
+import { Button, ButtonText, Container, Input, Logo, SecondContainer, SecondText, Txt } from "../app/styles";
 import Logon from "../assets/images/logo_principal.png";
 
 export default function Index() {
