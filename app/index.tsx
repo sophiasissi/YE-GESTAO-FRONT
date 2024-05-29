@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 import { Button, ButtonText, Container, Input, Logo, SecondContainer, SecondText, Txt } from "../app/styles";
 import Logon from "../assets/images/logo_principal.png";
 
@@ -15,7 +15,7 @@ export default function Index() {
         <ButtonText>Entrar</ButtonText>
       </Button>
       <SecondContainer>
-        <Text style={{color: '#fff'}}>Ainda não tem cadstro? </Text>
+        <Text style={{color: '#fff'}}>Ainda não tem cadastro? </Text>
         <TouchableOpacity onPress={() => router.navigate("register")}>
           <SecondText>Faça seu cadastro!</SecondText>
         </TouchableOpacity>

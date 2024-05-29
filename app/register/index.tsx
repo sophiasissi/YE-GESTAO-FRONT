@@ -42,13 +42,13 @@ export default function Register() {
           secureTextEntry={field.secureTextEntry}
         />
       ))}
-      <Button onPress={() => router.navigate("home")}>
+      <Button onPress={() => router.navigate("")}>
         <ButtonText>Cadastrar</ButtonText>
       </Button>
       <SecondContainer>
-        <Text style={{color: '#fff'}}>Ainda não tem cadastro? </Text>
-        <TouchableOpacity onPress={() => router.navigate("register")}>
-          <SecondText>Faça seu cadastro!</SecondText>
+        <Text style={{color: '#fff'}}>Já tem uma conta? </Text>
+        <TouchableOpacity onPress={() => router.navigate("")}>
+          <SecondText>Entrar</SecondText>
         </TouchableOpacity>
       </SecondContainer>
     </Container>
