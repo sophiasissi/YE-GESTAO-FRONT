@@ -11,7 +11,7 @@ export const Container = styled.View`
 export const Logo = styled.Image`
   width: 70%;
   height: 25%;
-  bottom: 30%;
+  bottom: 28%;
 `
 export const Button = styled.TouchableOpacity`
     border-radius: 8px;
