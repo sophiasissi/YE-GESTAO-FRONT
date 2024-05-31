@@ -11,7 +11,7 @@ export default function Index() {
       <Txt>Bem vindo ao seu app de Gestão de Saúde!</Txt>
       <Input placeholder={`Insira seu email`} />
       <Input placeholder={`Insira sua senha`} />
-      <Button onPress={() => router.navigate("home")}>
+      <Button onPress={() => router.navigate("(tabs)/home")}>
         <ButtonText>Entrar</ButtonText>
       </Button>
       <SecondContainer>
