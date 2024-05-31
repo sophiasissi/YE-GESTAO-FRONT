@@ -1,29 +1,22 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Logo = styled.Image`
+  width: 70%;
+  height: 25%;
+  bottom: 7%;
+`
+export const View = styled.View`
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
   background-color: #fff;
 `
-
-export const Logo = styled.Image`
-  width: 70%;
-  height: 25%;
-  bottom: 28%;
+export const CardContainer = styled.View`
+  width: '100%';
 `
-export const Button = styled.TouchableOpacity`
-    border-radius: 8px;
-    background-color: #000;
-    padding: 10px;
-    width: 80%;
-    align-self: center;
-    margin-top: 25px;
-`
-export const ButtonText = styled.Text`
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
+export const TxtCard = styled.Text`
+  font-size: 16;
   font-weight: bold;
+  color: #fff;
 `
