@@ -1,50 +1,8 @@
-# Welcome to your Expo app 👋
+# YE Gestão de Saúde - São Camilo - Front End
+Foi criado um aplicativo para o parceiro São Camilo, chamado YE Gestão de Saúde, cujo principal papel é auxiliar os usuários a realizarem a autogestão de suas questões de saúde como, lembretes de consultas agendadas, auxílio na interpretação de exames, lembretes dos medicamentos a serem tomados e histórico mantido de cada exame, consulta e medicamento adicionado. 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+O desenvolvimento desse aplicativo foi realizado utilizando um conjunto de tecnologias modernas e robustas, garantindo uma experiência eficiente e intuitiva para os usuários. Principais tecnologias que foram empregadas neste projeto:
 
-## Get started
+**Frontend: React,  React Native e Expo Go**
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Este projeto tem o intuito de aplicarmos nossos conhecimentos em projetos reais, colaborando com organizações externas e fortalecendo habilidades técnicas e sociais. Além disso, o projeto está integrado à trilha extensionista do curso, promovendo ações que beneficiam a comunidade e estabelecendo vínculos importantes com o setor social e empresarial.
