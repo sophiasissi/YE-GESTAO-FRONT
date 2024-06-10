@@ -41,3 +41,61 @@ export default function AddMedication() {
             console.log(error);
         });
     }
+    function openModal(){
+        setModal(true);
+        setTimeout(() => {
+            setModal(false);
+            router.navigate('medication');
+        }, 1500);
+    }
+
+    return (
+        <Container>
+            <Form>
+                <ViewText>
+                    <TextInput onChangeText={setName} style={{fontSize:20, textAlign: 'center'}} placeholder="Nome do Medicamento..."/>
+                </ViewText>
+                <ViewText>
+                    {/* <TextInput onChangeText={} style={{fontSize:20}} maxLength={4} keyboardType="numeric" placeholder="Horário..."/> */}
+                    <MaskInput
+                        style={{fontSize:20}}
+                        value={hour}
+                        placeholder="Horário..."
+                        onChangeText={(masked, unmasked) => {
+                            setHour(masked);
+                        }}
+                        mask={[/\d/, /\d/, ':', /\d/, /\d/]}
+                    />
+                </ViewText>
+                <ViewText>
+                    <TextInput onChangeText={setPeriod} style={{fontSize:20}} maxLength={2} keyboardType="numeric" placeholder="Período..."/>
+                </ViewText>
+                <ViewText>
+                    <TextInput onChangeText={setInterval} style={{fontSize:20}} maxLength={2} keyboardType="numeric" placeholder="Intervalo..."/>
+                </ViewText>
+            </Form>
+
+            <View style={{flexDirection:'row', alignItems:'center'}}>
+                <Button onPress={()=> router.navigate('medication')}>
+                    <TextButton>Cancelar</TextButton>
+                </Button>
+                <Button onPress={()=> saveMedication()}>
+                    <TextButton>Salvar</TextButton>
+                </Button>
+            </View>
+
+            {modal ?
+                <Modal transparent>
+                    <View style={{flex:1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center', alignItems: 'center'}}>
+                        <View style={{alignItems: 'center', backgroundColor: '#dfdfdf', padding:12, borderWidth:2, borderRadius:8, width:'80%'}}>
+                            <FontAwesome6 name="check" size={64} color="green" />
+                            <Text style={{fontSize: 20}}>Salvo com Sucesso</Text>
+                        </View>
+                    </View>
+                </Modal>
+            :
+                <></>
+            }
+        </Container>
+    )
+}
