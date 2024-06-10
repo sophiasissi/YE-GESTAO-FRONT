@@ -28,7 +28,7 @@ export const Input = styled.TextInput`
 export const Logo = styled.Image`
   width: 80%;
   height: 25%;
-  bottom: 5%;
+  bottom: 24px;
 `
 export const Button = styled.TouchableOpacity`
     border-radius: 8px;
