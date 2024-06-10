@@ -41,6 +41,7 @@ export default function AddMedication() {
             console.log(error);
         });
     }
+
     function openModal(){
         setModal(true);
         setTimeout(() => {
