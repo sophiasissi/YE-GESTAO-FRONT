@@ -39,6 +39,22 @@ export default function RootLayout() {
       <Stack.Screen name="addMedication/index" options={{ 
         title: "Adicionar Medicamento",
       }} />
+      <Stack.Screen name="detailMedication/[id]" options={{ 
+        title: "Medicamento",
+      }} />
+      <Stack.Screen name="detailExam/index" options={{ 
+        title: "Exame",
+      }} />
+      <Stack.Screen name="multiscreen/[id]" options={{ 
+        title: "",
+      }} />
+      <Stack.Screen name="(tabs)" options={{ 
+        headerShown: false 
+      }} />
+      <Stack.Screen name="camera/index" options={{
+        title: "",
+      }} />
+
     </Stack>
   );
 }
