@@ -49,7 +49,11 @@ export default function Index() {
     })
 
   }
-  
+
+  useEffect(() => {
+    verify()
+  }, [])
+
   return (
     <Container>
       <Toast />
