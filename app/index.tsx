@@ -25,6 +25,35 @@ export default function Index() {
     })
   }
 
+  async function login() {
+    await authRepository.login(email, password).then((res) => {
+      if(res.status != 200) {
+        Toast.show({
+          type: 'error',
+          text1: 'Erro ao logar!',
+          text2: res.data.message
+        });
+        alert(res.data.message)
+      }else {
+        Toast.show({
+          type: 'success',
+          text1: 'Logado com sucesso!',
+          text2: 'Seja bem vindo!'
+        })
+        AsyncStorage.setItem('token', res.data.token)
+        // console.log(res.data.token)
+        setTimeout(() => {
+          router.navigate("(tabs)/home")
+        }, 3000);
+      }
+    })
+
+  }
+
+  useEffect(() => {
+    verify()
+  }, [])
+
   return (
     <Container>
       <Toast />
