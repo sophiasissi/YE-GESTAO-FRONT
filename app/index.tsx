@@ -1,7 +1,7 @@
 import { useRouter } from "expo-router";
 import { Text, TouchableOpacity } from "react-native";
 import { Button, ButtonText, Container, Input, Logo, SecondContainer, SecondText, Txt } from "../app/styles";
-import Logon from "../assets/images/logo_principal.png";
+import Logon from "../assets/images/logo_principal2.png";
 import { AuthRepositoryHttp } from "@/api/repository/authRepositoryHttp";
 import { useEffect, useState } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage';
