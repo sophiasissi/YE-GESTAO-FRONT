@@ -23,3 +23,36 @@ export default function Consultations() {
           }
         })
       }
+
+      async function getConsultations() {
+        const response = await consultationRepository.getConsultations();
+        // console.log(response.data);
+        setData(response.data);
+    }
+
+    const jsonList = [
+        {
+            "id": 1,
+            "name": "Clinico Geral",
+        },
+        {
+            "id": 2,
+            "name": "Cardiologista",
+        },
+        {
+            "id": 3,
+            "name": "Dermatologista",
+        },
+        {
+            "id": 4,
+            "name": "Ortopedista",
+        },
+        {
+            "id": 5,
+            "name": "Oftalmologista",
+        },
+        {
+            "id": 6,
+            "name": "Otorrinolaringologista",
+        },
+    ]
