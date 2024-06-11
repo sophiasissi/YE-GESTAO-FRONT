@@ -16,7 +16,7 @@ export const CardContainer = styled.View`
   width: '100%';
 `
 export const TxtCard = styled.Text`
-  font-size: 16;
+  font-size: 16px;
   font-weight: bold;
   color: #fff;
 `
