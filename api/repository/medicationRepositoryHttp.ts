@@ -17,6 +17,7 @@ export class MedicationRepositoryHttp {
             return error.response;
         }
     }
+
     async getMedicationById(id: number) {
         try {
             const token = await AsyncStorage.getItem('token') ?? ''
