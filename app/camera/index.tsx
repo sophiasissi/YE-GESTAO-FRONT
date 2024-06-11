@@ -20,3 +20,16 @@ export default function CameraScreen() {
       </View>
     );
   }
+
+  return (
+    <View style={styles.container}>
+      <CameraView style={styles.camera}>
+        <View style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.button} onPress={()=>router.navigate('exams')}>
+            <FontAwesome6 name="camera" size={72} color="white" />
+          </TouchableOpacity>
+        </View>
+      </CameraView>
+    </View>
+  );
+}
