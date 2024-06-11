@@ -15,3 +15,11 @@ export function MedicationCard({ json }: any) {
         </Link>
     )
 }
+
+const styles = StyleSheet.create({
+    containerButton: {
+        padding: 24,
+        backgroundColor: '#fff',
+        marginBottom: 4,
+    },
+}); 
