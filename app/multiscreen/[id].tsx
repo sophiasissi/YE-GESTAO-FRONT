@@ -47,7 +47,7 @@ export default function Multiscreen(){
             return;
         }
         const invertDate = date.split('/').reverse().join('-');
-
+        
         const data = {
             'date': invertDate,
             'systolic': systolic,
@@ -180,7 +180,7 @@ export default function Multiscreen(){
                 </View>
             : <></>
             }
-
+            
             {/* LISTA */}
             <FlatList
                 data={id === "pressure" ? jsonPressure : id === "glucose" ? jsonGlucose : id === "imc" ? jsonImc : []}
@@ -230,3 +230,32 @@ export default function Multiscreen(){
                             :
                                 <TextInput onChangeText={setLevel} style={{backgroundColor: '#fff', padding: 8, width: '100%', marginBottom: 8, borderRadius: 8}} keyboardType="numeric" placeholder="Valor"/>
                             }
+
+                            <View style={{flexDirection:'row', alignItems:'center'}}>
+                                <TouchableOpacity style={{backgroundColor: '#739489', padding: 20}} onPress={()=> setModal(false)}>
+                                    <Text style={{textAlign:'center', color:'#fff', fontWeight:'bold'}}>Cancelar</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={{backgroundColor: '#739489', padding: 20}} onPress={()=> {
+                                    if(id === "pressure"){
+                                        createBloodPressure();
+                                    }else if(id === "glucose"){
+                                        createGlucose();
+                                    }else if(id === "imc"){
+                                        createImc();
+                                    }else{
+                                        alert('Erro ao salvar');
+                                    }
+                                }}>
+                                    <Text style={{textAlign:'center', color:'#fff', fontWeight:'bold'}}>Salvar</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                </Modal>
+            :
+                <></>
+            }
+            
+        </View>
+    )
+}
