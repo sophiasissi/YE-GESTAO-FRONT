@@ -34,3 +34,29 @@ export default function DetailExam() {
             "level": "30 mg/dL"
         }
     ]
+
+    return (
+        <View>
+            <View style={{backgroundColor:'lightgray', padding: 24, marginBottom: 8}}>
+                <Text style={{textAlign:'center', fontSize: 16}}>Glicose</Text>
+            </View>
+
+            <FlatList
+                data={json}
+                renderItem={({item}) => {
+                    return (
+                        <View style={{flexDirection:'row', marginBottom: 8}}>
+                            <View style={{width:'50%', backgroundColor: '#739489', padding: 24}}>
+                                <Text style={{fontSize: 16, textAlign: 'center', color: 'white'}}>{item.date}</Text>
+                            </View>
+
+                            <View style={{width:'50%', backgroundColor: '#dfdfdf', padding: 24}}>
+                                <Text style={{fontSize: 16, textAlign: 'center'}}>{item.level}</Text>
+                            </View>
+                        </View>
+                    );
+                }}
+            />
+        </View>
+    );
+}
