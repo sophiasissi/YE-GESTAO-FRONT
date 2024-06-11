@@ -106,4 +106,77 @@ export default function Multiscreen(){
             'weight': weight
         }
 
-        
+        await multiRepository.createImc(data).then((response) => {
+            if(response.status == 201){
+                setDate('')
+                setHeight('')
+                setWeight('')
+                setModal(false);
+                getImc();
+            } else {
+                alert('Erro ao salvar IMC');
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+
+    const [modal, setModal] = useState(false);
+    
+    function openModal(){
+        setModal(true);
+    }
+
+    useFocusEffect(() => {
+        if(id === "pressure"){
+            getBloodPressure();
+        } else if(id === "glucose"){
+            getGlucose();
+        } else if(id === "imc"){
+            getImc();
+        } else {
+            router.push("/404");
+        }
+    })
+    useEffect(() => {
+        if(id === "pressure"){
+            getBloodPressure();
+        } else if(id === "glucose"){
+            getGlucose();
+        } else if(id === "imc"){
+            getImc();
+        } else {
+            router.push("/404");
+        }
+    }, [])
+
+    return (
+        <View style={{flex: 1, alignItems: 'center'}}>
+            {/* TITULO */}
+            <View style={{width: "100%", backgroundColor: '#003732', alignItems:'center'}}>
+                <Text style={{color: '#fff', fontWeight:'bold', fontSize: 24, marginBottom: 8}}>{
+                    id === "pressure" ? 
+                        "Pressão Arterial" 
+                    : id === "glucose" ? 
+                        "Glicemia" 
+                    : id === "imc" ? 
+                        "IMC" 
+                    : "Página não encontrada"
+                }</Text>
+            </View>
+
+            {/* LEGENDA PRA LISTA DO IMC */}
+            { id === "imc" ?
+                <View style={{flexDirection:'row', width:'100%', marginTop: 8, alignItems:'center', justifyContent: 'center'}}>
+                    <View style={{width:'33%', backgroundColor: 'lightgray', padding: 24}}>
+                        <Text style={{textAlign:'center', fontSize: 16}}>Peso</Text>
+                    </View>
+                    <View style={{width:'33%', backgroundColor: 'lightgray', padding: 24}}>
+                        <Text style={{textAlign:'center', fontSize: 16}}>Altura</Text>
+                    </View>
+                    <View style={{width:'33%', backgroundColor: 'lightgray', padding: 24}}>
+                        <Text style={{textAlign:'center', fontSize: 16}}>Nível</Text>
+                    </View>
+                </View>
+            : <></>
+            }
