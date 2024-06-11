@@ -47,3 +47,63 @@ export default function Multiscreen(){
             return;
         }
         const invertDate = date.split('/').reverse().join('-');
+
+        const data = {
+            'date': invertDate,
+            'systolic': systolic,
+            'diastolic': diastolic
+        }
+
+        await multiRepository.createBloodPressure(data).then((response) => {
+            if(response.status == 201){
+                setDate('')
+                setSystolic('')
+                setDiastolic('')
+                setModal(false);
+                getBloodPressure();
+            } else {
+                alert('Erro ao salvar pressão arterial');
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+    async function createGlucose() {
+        if(date === '' || level === ''){
+            alert('Preencha todos os campos');
+            return;
+        }
+        const invertDate = date.split('/').reverse().join('-');
+        
+        const data = {
+            'date': invertDate,
+            'value': level
+        }
+
+        await multiRepository.createGlucose(data).then((response) => {
+            if(response.status == 201){
+                setDate('')
+                setLevel('')
+                setModal(false);
+                getGlucose();
+            } else {
+                alert('Erro ao salvar glicemia');
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
+    async function createImc() {
+        if(date === '' || height === '' || weight === ''){
+            alert('Preencha todos os campos');
+            return;
+        }
+        const invertDate = date.split('/').reverse().join('-');
+        
+        const data = {
+            'date': invertDate,
+            'height': height,
+            'weight': weight
+        }
+
+        
