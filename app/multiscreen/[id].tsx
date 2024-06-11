@@ -180,3 +180,53 @@ export default function Multiscreen(){
                 </View>
             : <></>
             }
+
+            {/* LISTA */}
+            <FlatList
+                data={id === "pressure" ? jsonPressure : id === "glucose" ? jsonGlucose : id === "imc" ? jsonImc : []}
+                renderItem={({item}) => (
+                    id === "pressure" ? 
+                        <CardListThree item={item}/>
+                    : id === "glucose" ?
+                        <CardListThree item={item}/>
+                    : id === "imc" ?
+                        <CardListThree item={item}/>
+                    : <></>
+                )}
+            />
+
+            {/* BOTAO DE ADICIONAR */}
+            <View style={{alignItems:'center', marginVertical: 8}}>
+                <TouchableOpacity onPress={()=>openModal()}>
+                    <FontAwesome6 name="circle-plus" size={40} color="black" />
+                </TouchableOpacity>
+            </View>
+
+            {/* MODAL */}
+            {modal ?
+                <Modal transparent>
+                    <View style={{flex:1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'center', alignItems: 'center'}}>
+                        <View style={{alignItems: 'center', backgroundColor: '#dfdfdf', padding:12, borderWidth:2, borderRadius:8, width:'80%'}}>
+                            <MaskInput
+                                style={{backgroundColor: '#fff', padding: 8, width: '100%', marginBottom: 8, borderRadius: 8}}
+                                placeholder="Data"
+                                value={date}
+                                onChangeText={(masked, unmasked) => {
+                                    setDate(masked);
+                                }}
+                                mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
+                            />
+                            {id === "imc" ? 
+                            <>
+                                <TextInput onChangeText={setHeight} style={{backgroundColor: '#fff', padding: 8, width: '100%', marginBottom: 8, borderRadius: 8}} keyboardType="numeric" placeholder="Altura em cm"/>
+                                <TextInput onChangeText={setWeight} style={{backgroundColor: '#fff', padding: 8, width: '100%', marginBottom: 8, borderRadius: 8}} keyboardType="numeric" placeholder="Peso em Kg"/>
+                            </>
+                            :    
+                            id === "pressure" ?
+                            <>
+                                <TextInput onChangeText={setDiastolic} style={{backgroundColor: '#fff', padding: 8, width: '100%', marginBottom: 8, borderRadius: 8}} keyboardType="numeric" placeholder="Diastólica"/>
+                                <TextInput onChangeText={setSystolic} style={{backgroundColor: '#fff', padding: 8, width: '100%', marginBottom: 8, borderRadius: 8}} keyboardType="numeric" placeholder="Sistólica"/>
+                            </>
+                            :
+                                <TextInput onChangeText={setLevel} style={{backgroundColor: '#fff', padding: 8, width: '100%', marginBottom: 8, borderRadius: 8}} keyboardType="numeric" placeholder="Valor"/>
+                            }
